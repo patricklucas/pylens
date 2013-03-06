@@ -56,7 +56,7 @@ You can use lenses to create "shortcuts":
     
     ff o firefox
 
-getting the most of pylens
+getting the most out of pylens
 ==========================
 
 In your distro settings, assign a keyboard shortcut you find intuitive (I like Alt+Space), and have python call *pylens.py*. The program closes if it loses focus or gets no/bad input.
