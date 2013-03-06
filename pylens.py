@@ -28,13 +28,19 @@ except IOError:
 def handleQuery(event):
 	query = text.get(1.0, END).strip()
 
+	# try to match a macro
+	bestLens = None
 	for lens in lenses:
 		if query.startswith(lens["command"]):
-			query = lens["query"].replace(querySwapToken, query.replace(lens["command"], "").strip())
+			if bestLens is None or len(lens["command"]) > len(bestLens["command"]):
+				bestLens = lens
+	if bestLens is not None:
+		query = bestLens["query"].replace(querySwapToken, query[len(bestLens["command"]):].strip())
 
 	# 'o' is the lens for running a command
 	if query.startswith("o "):
-		runCommand(query[2:].strip())
+		query = query[2:].strip().replace("~", expanduser("~"))
+		runCommand(query, shell=True)
 	# no lens means the query is a website or a search
 	elif len(query) > 0:
 		if "." in query and " " not in query and not query.startswith("http"):
