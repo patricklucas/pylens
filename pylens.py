@@ -18,9 +18,8 @@ def handleQuery(event):
 		runCommand(query[2:].strip())
 	# no lens means the query is a website or a search
 	elif len(query) > 0:
-		if "." in query and " " not in query:
-			if not query.startswith("http"):
-				query = "http://" + query
+		if "." in query and " " not in query and not query.startswith("http"):
+			query = "http://" + query
 		else:
 			query = "https://www.google.com/search?q=" + query
 		webbrowser.open(query, 2, True)
