@@ -45,3 +45,11 @@ and in your macro string you will put the toke *{query}*, which will be replaced
     conjugate http://www.spanishdict.com/translate/{query}#conjugation
 
 in my config file. You can put comments with *#*.
+
+You can use lenses to create "shortcuts":
+
+    # cool website
+    hn http://news.ycombinator
+    
+    # edit the config for pylens
+    conf o gedit ~/pylens.conf
