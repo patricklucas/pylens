@@ -1,5 +1,6 @@
 from Tkinter import *
 import webbrowser
+from subprocess import Popen as runCommand
 
 root = Tk()
 root.title("Pylens")
@@ -12,8 +13,16 @@ text.pack(side=LEFT, fill=Y)
 def handleQuery(event):
 	query = text.get(1.0, END).strip()
 
-	# analyze the query and do something awesome
-	if len(query) > 0:
+	# 'o' is the lens for running a command
+	if query.startswith("o "):
+		runCommand(query[2:].strip())
+	# no lens means the query is a website or a search
+	elif len(query) > 0:
+		if "." in query and " " not in query:
+			if not query.startswith("http"):
+				query = "http://" + query
+		else:
+			query = "https://www.google.com/search?q=" + query
 		webbrowser.open(query, 2, True)
 
 	close(event)
