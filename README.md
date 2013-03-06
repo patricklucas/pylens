@@ -53,3 +53,5 @@ You can use lenses to create "shortcuts":
     
     # edit the config for pylens
     conf o gedit ~/pylens.conf
+    
+    ff firefox
