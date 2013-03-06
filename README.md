@@ -11,7 +11,7 @@ Usage
 do some command
 -----------
 
-    o command_to_run
+    o some_command
 
 go to a website
 ---------------
