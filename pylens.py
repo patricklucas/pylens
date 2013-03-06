@@ -4,7 +4,7 @@ from subprocess import Popen as runCommand
 from os.path import expanduser
 
 root = Tk()
-root.title("Pylens")
+root.title("pylens")
 
 text = Text(root)
 text.config(width=60, height=1)
@@ -13,10 +13,11 @@ text.pack(side=LEFT, fill=Y)
 # custom searches
 lenses = []
 querySwapToken = "{query}"
+home = expanduser("~");
 
 # parse the config
 try:
-	configs = open(expanduser("~") + "/pylens.conf", 'r')
+	configs = open(home + "/pylens.conf", 'r')
 	for lens in configs:
 		if not lens.startswith("#") and len(lens.strip()) > 0:
 			sep = lens.index(" ")
@@ -39,7 +40,7 @@ def handleQuery(event):
 
 	# 'o' is the lens for running a command
 	if query.startswith("o "):
-		query = query[2:].strip().replace("~", expanduser("~"))
+		query = query[2:].strip().replace("~", home)
 		runCommand(query, shell=True)
 	# no lens means the query is a website or a search
 	elif len(query) > 0:
