@@ -14,7 +14,7 @@ def callback(event):
   root.destroy()
 
 text.bind("<Return>", callback)
-text.grab_set()
+text.focus_force()
 
 # center the window
 root.withdraw()
