@@ -11,7 +11,7 @@ Usage
 do some command
 -----------
 
-    o command to run
+    o command_to_run
 
 go to a website
 ---------------
@@ -21,7 +21,7 @@ go to a website
 search google
 -------------
 
-    search term
+    search_term
 
 special lenses
 -------------
