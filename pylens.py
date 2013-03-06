@@ -31,7 +31,7 @@ def handleQuery(event):
 	# try to match a macro
 	bestLens = None
 	for lens in lenses:
-		if query.startswith(lens["command"]):
+		if (query + " ").startswith(lens["command"] + " "):
 			if bestLens is None or len(lens["command"]) > len(bestLens["command"]):
 				bestLens = lens
 	if bestLens is not None:
