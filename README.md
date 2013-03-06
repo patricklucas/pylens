@@ -3,7 +3,7 @@ pylens
 
 A simple Alfred-like shortcut widget.
 
-Requires TKinter. Doesn't work on OSX (window manager focus issues).
+Requires TKinter.
 
 Usage
 =====
