@@ -23,7 +23,7 @@ search google
 
     search_term
 
-special lenses
+custom lenses
 -------------
 
 you can create macros to define custom queries and searches like this:
