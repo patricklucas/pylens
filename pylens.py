@@ -18,7 +18,7 @@ querySwapToken = "{query}"
 try:
 	configs = open(expanduser("~") + "/pylens.conf", 'r')
 	for lens in configs:
-		if not lens.startswith("#"):
+		if not lens.startswith("#") and len(lens.strip()) > 0:
 			sep = lens.index(" ")
 			lenses += [{"command" : lens[:sep].strip(), "query" : lens[sep:].strip()}]
 except IOError:
