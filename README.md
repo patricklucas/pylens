@@ -49,7 +49,7 @@ in my config file. You can put comments with *#*.
 You can use lenses to create "shortcuts":
 
     # cool website
-    hn http://news.ycombinator
+    hn http://news.ycombinator.com
     
     # edit the config for pylens
     conf o gedit ~/pylens.conf
